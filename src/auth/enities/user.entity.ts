@@ -17,6 +17,12 @@ export class TblUser{
     @Column({ length: 15 })
     user_phone_number: string;
 
-    @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+    @Column()
+    user_password: string;
+    
+    @Column({
+        type: "timestamp", 
+        default: () => "CURRENT_TIMESTAMP" 
+    })
     user_created_at: string;
 }

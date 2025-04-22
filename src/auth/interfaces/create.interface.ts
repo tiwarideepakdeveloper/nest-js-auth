@@ -4,4 +4,5 @@ export interface CreateUser {
     user_last_name?: string;
     user_email: string;
     user_phone_number: string;
+    user_password: string;
 }

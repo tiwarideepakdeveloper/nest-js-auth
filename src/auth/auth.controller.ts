@@ -11,9 +11,8 @@ export class AuthController {
     ){}
 
     @Post('sign-in')
-    signIn(@Body() signInDto : SignInDto){
-        console.log(signInDto);
-        return [];
+    async signIn(@Body() signInDto : SignInDto){
+        return await this.authService.signInUser(signInDto);
     }
     
     @Post('sign-up')
