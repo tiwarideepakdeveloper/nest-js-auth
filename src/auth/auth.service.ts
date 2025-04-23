@@ -31,7 +31,7 @@ export class AuthService {
             throw new ConflictException('Wrong Credentials Used');
         }
         // return existing;
-        const token = await this.jwtService.signAsync({ id: existing.user_id, email: existing.user_email});
+        const token = await this.jwtService.signAsync({ id: existing.user_id, email: existing.user_email, roles: [{permissions: [{name: 'user:read'}]}]});
         return { token  };
     }
 }
